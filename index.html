@@ -290,6 +290,28 @@ footer a { gap: 8px; }
   .footer-id { align-items: start; }
   .footer-id p { font-size: 13px; }
 }
+/* A narrow desktop pane has room for a compact cover spread. */
+@media (min-width: 480px) and (max-width: 740px) {
+  .cover-grid {
+    grid-template-columns: minmax(0, 1.13fr) minmax(0, 1fr);
+    grid-template-areas: "status status" "headline object" "intro intro" "actions actions";
+    column-gap: 14px;
+    padding-block: 28px 34px;
+  }
+  .cover-words { display: contents; }
+  .cover .prelaunch { grid-area: status; margin-bottom: 12px; }
+  .cover h1 { grid-area: headline; font-size: clamp(33px,7vw,52px); margin: 0; }
+  .cover .study { grid-area: object; align-self: center; justify-self: end; width: min(100%,283px); padding: 0; }
+  .cover .study-window { aspect-ratio: 1.1; margin-inline: -3px; }
+  .cover .study figcaption { margin: 0; min-height: 42px; gap: 0; }
+  .cover .study-name { font-size: 13px; }
+  .cover .angle-ticks { display: none; }
+  .cover .study-controls { gap: 0; }
+  .cover .study-controls button { width: 44px; }
+  .cover .study-controls #paper-angle { min-width: 24px; width: 29px; }
+  .cover-intro { grid-area: intro; max-width: 54ch; margin-top: 17px; }
+  .cover-actions { grid-area: actions; margin-top: 18px; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .desk.enhanced .walk-panel:not([hidden]) .paper-sheet { animation: paper-in 260ms ease-out; }
   @keyframes paper-in { from { translate: 0 5px; } }
